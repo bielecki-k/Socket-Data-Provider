@@ -11,8 +11,11 @@ import java.util.Map;
 public class Controller {
 
     @GetMapping("/hello")
-    public Map<String, String> hello() {
-        return Map.of("msg", "hello");
+    public Map<String, Object> hello() {
+
+        SystemInfo sysInf = new SystemInfo();
+        return sysInf.getSystemInfo();
+
     }
 
 }
